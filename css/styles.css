@@ -3085,6 +3085,7 @@ img.u-pull-left {
  * -------------------------------------------------------------------- */
 .s-header__logo {
     z-index     : 3;
+    margin-top:  -6px;
     line-height : 1;
     transform   : translate(4px, 0);
 }
@@ -3101,6 +3102,30 @@ img.u-pull-left {
     width          : var(--logo-width);
     margin         : 0;
     vertical-align : bottom;
+}
+
+.s-header__logo .alexander-logo {
+    height         : 40px;
+    width          : auto;
+    max-width      : 280px;
+    object-fit     : contain;
+}
+
+/* About section headshot styling */
+.about-image {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100%;
+}
+
+.alon-headshot {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
 }
 
 /* --------------------------------------------------------------------
@@ -3264,6 +3289,16 @@ img.u-pull-left {
         top          : var(--vspace-0_25);
     }
 
+    .s-header__logo .alexander-logo {
+        height    : 36px;
+        max-width : 240px;
+    }
+
+    .alon-headshot {
+        max-width: 300px;
+        margin-top: var(--vspace-1);
+    }
+
     .s-header__inner {
         max-width : none;
         width     : 100%;
@@ -3353,6 +3388,16 @@ img.u-pull-left {
 @media screen and (max-width: 400px) {
     .s-header__logo {
         transform : translate(7vw, -50%);
+    }
+
+    .s-header__logo .alexander-logo {
+        height    : 32px;
+        max-width : 200px;
+    }
+
+    .alon-headshot {
+        max-width: 250px;
+        margin-top: var(--vspace-0_75);
     }
 
     .s-header__nav {
@@ -3483,7 +3528,7 @@ img.u-pull-left {
 
 .s-intro__content-value {
     font-family : var(--font-3);
-    font-size   : calc(var(--text-size) * 1.1111);
+    font-size   : calc(var(--text-size) * 1.25);
     font-weight : 300;
     line-height : 1.8;
     color       : var(--color-text-light);
