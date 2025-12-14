@@ -3162,22 +3162,19 @@ img.u-pull-left {
 
 .brand-scroller__track {
     display: flex;
-    animation: scroll 30s linear infinite;
-    gap: 2rem;
-    width: fit-content;
+    gap: 3.6rem;
+    animation: infiniteScroll 20s linear infinite;
     --item-width: 180px;
-    --gap-width: 2rem;
-    --total-items: 6;
+    --gap-size: 3.6rem;
+    --items-count: 6;
 }
 
 .brand-item {
-    flex: 0 0 auto;
+    flex: 0 0 180px;
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 180px;
-    height: 80px;
-    padding: var(--vspace-0_5);
 }
 
 .brand-item  img {
@@ -3188,8 +3185,8 @@ img.u-pull-left {
 }
 
 .brand-logo {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 160px;
+    max-height: 60px;
     width: auto;
     height: auto;
     object-fit: contain;
@@ -3202,12 +3199,23 @@ img.u-pull-left {
     transform: scale(1.05);
 }
 
-@keyframes scroll {
+/* Specific logo size adjustments */
+.brand-logo[alt="Adjust"],
+.brand-logo[alt="Cash Cow"] {
+    transform: scale(0.75); /* 15% + 10% = 25% smaller total */
+}
+
+.brand-logo[alt="Adjust"]:hover,
+.brand-logo[alt="Cash Cow"]:hover {
+    transform: scale(0.79); /* 0.75 * 1.05 = 0.7875, rounded to 0.79 */
+}
+
+@keyframes infiniteScroll {
     0% {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc((var(--item-width) + var(--gap-width)) * var(--total-items) * -1));
+        transform: translateX(calc(-1080px - 18rem)); /* 5 gaps × 3.6rem = 18rem */
     }
 }
 
@@ -3236,8 +3244,13 @@ img.u-pull-left {
     }
     
     .brand-item {
-        min-width: 224px;
+        flex: 0 0 224px;
         height: 96px;
+    }
+    
+    .brand-logo {
+        max-width: 200px;
+        max-height: 76px;
     }
     
     .brand-partners {
