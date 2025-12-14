@@ -4063,6 +4063,10 @@ img.u-pull-left {
     .section-header__primary .desc {
         margin-bottom: var(--vspace-1_5);
     }
+    
+    .section-header__primary .text-display-1 {
+        font-size: calc(var(--text-xxl) * 0.6);
+    }
 }
 
 
