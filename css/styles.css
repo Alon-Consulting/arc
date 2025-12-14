@@ -2967,7 +2967,7 @@ img.u-pull-left {
 
 @media screen and (max-width: 600px) {
     .section-header::before {
-        left : calc(var(--gutter) + 6vw);
+        left : var(--gutter);
     }
 }
 
@@ -2997,7 +2997,7 @@ img.u-pull-left {
 
 @media screen and (max-width: 400px) {
     .section-header::before {
-        left : 4.6vw;
+        left : var(--gutter);
     }
 
     .list-block .column:nth-child(2n + 1) {
@@ -3236,8 +3236,13 @@ img.u-pull-left {
     }
     
     .brand-item {
-        min-width: 140px;
-        height: 60px;
+        min-width: 224px;
+        height: 96px;
+    }
+    
+    .brand-partners {
+        padding-left: var(--gutter);
+        padding-right: var(--gutter);
     }
 }
 
@@ -4029,13 +4034,15 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
     .s-about {
-        padding-top    : var(--vspace-2_75);
+        padding-top    : var(--vspace-2);
         padding-bottom : var(--vspace-3);
+        padding-left   : var(--gutter);
+        padding-right  : var(--gutter);
     }
 
     .about-image {
-        margin-top: var(--vspace-3);
-        margin-bottom: var(--vspace-2);
+        margin-top: var(--vspace-1);
+        margin-bottom: var(--vspace-1);
         order: 2;
         position: relative;
         z-index: 1;
@@ -4044,7 +4051,7 @@ img.u-pull-left {
 
     .section-header__primary {
         order: 1;
-        margin-bottom: var(--vspace-2);
+        margin-bottom: var(--vspace-0_25);
         position: relative;
         z-index: 2;
     }
