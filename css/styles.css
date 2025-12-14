@@ -2812,7 +2812,7 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 .section-header {
     padding-top   : var(--vspace-2_5);
-    margin-bottom : var(--vspace-1_75);
+    margin-bottom : var(--vspace-1);
     position      : relative;
 }
 
@@ -3130,6 +3130,92 @@ img.u-pull-left {
     position: relative;
 }
 
+/* Brand Partners Section */
+.brand-partners {
+    margin-top: 0;
+    margin-bottom: var(--vspace-0_25);
+}
+
+.brand-partners__title {
+    text-align: center;
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-bottom: var(--vspace-0_5);
+    color: var(--color-text-1);
+}
+
+.brand-partners__subtitle {
+    text-align: center;
+    font-size: var(--text-md);
+    color: var(--color-text-2);
+    margin-bottom: var(--vspace-2);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.brand-scroller {
+    overflow: hidden;
+    position: relative;
+    margin: var(--vspace-0_25) 0;
+}
+
+.brand-scroller__track {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    gap: 2rem;
+    width: fit-content;
+    --item-width: 180px;
+    --gap-width: 2rem;
+    --total-items: 6;
+}
+
+.brand-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    height: 80px;
+    padding: var(--vspace-0_5);
+}
+
+.brand-item  img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    margin-bottom:  0;
+}
+
+.brand-logo {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%) opacity(0.7);
+    transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.05);
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc((var(--item-width) + var(--gap-width)) * var(--total-items) * -1));
+    }
+}
+
+/* Pause animation on hover */
+.brand-scroller:hover .brand-scroller__track {
+    animation-play-state: paused;
+}
+
 /* Mobile layout fixes */
 @media screen and (max-width: 1100px) {
     .about-image {
@@ -3147,6 +3233,11 @@ img.u-pull-left {
     .section-header__secondary {
         position: relative;
         z-index: 1;
+    }
+    
+    .brand-item {
+        min-width: 140px;
+        height: 60px;
     }
 }
 
@@ -3928,8 +4019,8 @@ img.u-pull-left {
  *
  * ------------------------------------------------------------------- */
 .s-about {
-    padding-top    : var(--vspace-5);
-    padding-bottom : var(--vspace-5);
+    padding-top    : var(--vspace-3_5);
+    padding-bottom : var(--vspace-3_5);
 }
 
 /* ------------------------------------------------------------------- 
@@ -3938,8 +4029,8 @@ img.u-pull-left {
  * ------------------------------------------------------------------- */
 @media screen and (max-width: 800px) {
     .s-about {
-        padding-top    : var(--vspace-4);
-        padding-bottom : var(--vspace-4_5);
+        padding-top    : var(--vspace-2_75);
+        padding-bottom : var(--vspace-3);
     }
 
     .about-image {
