@@ -1388,7 +1388,7 @@ h3,
 .h3,
 h4,
 .h4 {
-    margin-top    : var(--vspace-2);
+    margin-top    : var(--vspace-1);
     margin-bottom : var(--vspace-0_75);
 }
 
@@ -2913,7 +2913,7 @@ img.u-pull-left {
     height           : var(--vspace-1_75);
     width            : var(--vspace-1_75);
     border-radius    : 50%;
-    background-color : var(--color-gray-6);
+    /* background-color : var(--color-gray-6); */
     margin-bottom    : var(--vspace-0_25);
 }
 
@@ -3418,12 +3418,12 @@ img.u-pull-left {
 
 @media screen and (max-width: 825px) {
     .s-header {
-        --logo-width : 36px;
+        --logo-width : 47px;
         top          : var(--vspace-0_25);
     }
 
     .s-header__logo .alexander-logo {
-        height    : 36px;
+        height    : 47px;
         max-width : 240px;
     }
 
@@ -3921,7 +3921,7 @@ img.u-pull-left {
  *
  * ------------------------------------------------------------------- */
 .s-why {
-    padding-top    : var(--vspace-3);
+    padding-top    : var(--vspace-2_5);
     padding-bottom : var(--vspace-3);
     background-color: var(--color-white);
 }
@@ -4004,7 +4004,28 @@ img.u-pull-left {
 .s-value {
     padding-top      : var(--vspace-3);
     padding-bottom   : var(--vspace-3);
-    background-color : var(--color-white);
+    background-color : var(--color-gray-19);
+    color            : var(--color-white);
+}
+
+.s-value .section-header__pretitle {
+    color: var(--color-1);
+}
+
+.s-value .title {
+    color: var(--color-white);
+}
+
+.s-value .desc {
+    color: var(--color-gray-11);
+}
+
+.s-value .list-block__item h3 {
+    color: var(--color-white);
+}
+
+.s-value .list-block__item p {
+    color: var(--color-gray-11);
 }
 
 .value-list {
@@ -4076,6 +4097,15 @@ img.u-pull-left {
     .value-list .list-block__item {
         margin-bottom: var(--vspace-1_5);
     }
+
+    /* ensure correct order on mobile for value section */
+    .s-value .section-header__primary {
+        order: 1;
+    }
+
+    .s-value .section-header__secondary {
+        order: 2;
+    }
 }
 
 
@@ -4096,8 +4126,8 @@ img.u-pull-left {
 
 /* service icons individual images */
 .service-icon {
-    width: var(--vspace-1_75);
-    height: var(--vspace-1_75);
+    width: var(--vspace-2_5);
+    height: var(--vspace-2_5);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -4107,19 +4137,46 @@ img.u-pull-left {
 }
 
 .service-icon--foundations {
-    background-image: url(../images/icons/foundations.png);
+    background-image: url(../images/icons/foundations-white.png);
 }
 
 .service-icon--acceleration {
-    background-image: url(../images/icons/acceleration.png);
+    background-image: url(../images/icons/acceleration-white.png);
 }
 
 .service-icon--growth {
-    background-image: url(../images/icons/growth.png);
+    background-image: url(../images/icons/growth-white.png);
 }
 
 .service-icon--tailored {
-    background-image: url(../images/icons/catalyst.png);
+    background-image: url(../images/icons/catalyst-white.png);
+}
+
+/* service subtitle styling */
+.service-subtitle {
+    margin-top: var(--vspace-0_125);
+    margin-bottom: 0;
+    color: var(--color-gray-15) !important;
+    font-size: calc(var(--text-size) * 1.1111);
+}
+
+/* title with subtitle layout */
+.list-block__title--with-subtitle {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--vspace-0_75);
+}
+
+.list-block__title--with-subtitle .list-block__title-text {
+    flex: 1;
+}
+
+.list-block__title--with-subtitle .list-block__title-text h3 {
+    margin-bottom: 0;
+}
+
+.list-block__title--with-subtitle .list-block__icon {
+    flex-shrink: 0;
 }
 
 /* foundations inline layout */
@@ -4693,19 +4750,20 @@ img.u-pull-left {
  *
  * ------------------------------------------------------------------- */
 .s-footer {
-    background-color : var(--color-gray-19);
+    background-color : var(--color-gray-2);
     padding-top      : var(--vspace-3);
     padding-bottom   : var(--vspace-3);
     margin-top       : auto;
     position         : relative;
+    color            : var(--color-1);
 }
 
 .s-footer h6 {
     margin-top : 0;
-    color: var(--color-white);
+    color: var(--color-text-dark);
 }
 
-/* footer text colors for dark background */
+/* footer text colors for light background */
 .s-footer .title,
 .s-footer .desc,
 .s-footer p,
@@ -4716,7 +4774,22 @@ img.u-pull-left {
 .s-footer .contact-block p,
 .s-footer .subscribe-form h6,
 .s-footer__bottom {
-    color: var(--color-white) !important;
+    color: var(--color-text) !important;
+}
+
+.s-footer .contact-block h6,
+.s-footer .subscribe-form h6,
+.s-footer .title {
+    color: var(--color-text-dark) !important;
+}
+
+.s-footer .text-pretitle,
+.s-footer .section-header__pretitle {
+    color: var(--color-1) !important;
+}
+
+.s-footer .section-header.light-on-dark::before {
+    color: var(--color-gray-9);
 }
 
 /* contact linkedin icon */
@@ -4740,7 +4813,7 @@ img.u-pull-left {
 }
 
 .contact-linkedin svg path {
-    fill: var(--color-white) !important;
+    fill: var(--color-1) !important;
 }
 
 .s-footer__btns {
@@ -4754,7 +4827,7 @@ img.u-pull-left {
 }
 
 .s-footer .contact-list a {
-    color : var(--color-white);
+    color : var(--color-text);
 }
 
 .s-footer .contact-list a:focus,
@@ -4767,7 +4840,7 @@ img.u-pull-left {
 }
 
 .s-footer__bottom {
-    border-top  : 1px solid var(--color-gray-16);
+    border-top  : 1px solid var(--color-gray-10);
     margin-top  : var(--vspace-2);
     padding-top : var(--vspace-1);
 }
@@ -4784,8 +4857,9 @@ img.u-pull-left {
  * ## contact btn
  * ------------------------------------------------------------------- */
 .s-footer__contact-btn {
-    --color-btn-primary       : var(--color-gray-19);
-    --color-btn-primary-hover : var(--color-1);
+    --color-btn-primary       : var(--color-1);
+    --color-btn-primary-hover : var(--color-text-dark);
+    --color-btn-primary-text  : var(--color-white);
     padding-top               : calc(var(--vspace-0_75) + var(--vspace-0_75));
     padding-bottom            : var(--vspace-0_5);
 }
@@ -4869,7 +4943,7 @@ img.u-pull-left {
 }
 
 .s-footer__social svg path {
-    fill : var(--color-white) !important;
+    fill : var(--color-text) !important;
 }
 
 /* ------------------------------------------------------------------- 
