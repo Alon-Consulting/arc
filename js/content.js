@@ -12,7 +12,7 @@ const CONTENT = {
     // Hero/Intro Section
     intro: {
         values: "Attribution · Partnerships · Growth Strategy",
-        title: "Turn <span class='bold'>attribution</span><br>into <span class='bold'>your growth advantage</span>.",
+        title: "Turn <span class='bold'>attribution</span><br> into <span class='bold'>your growth advantage</span>.",
     },
 
     // Section 01: Why Are You Here
