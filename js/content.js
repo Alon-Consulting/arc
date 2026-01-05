@@ -11,8 +11,8 @@ const CONTENT = {
 
     // Hero/Intro Section
     intro: {
-        values: "<span>Attribution&nbsp;</span><span>· Partnerships&nbsp;</span><span>· Growth Strategy</span>",
-        valuesMobile: "<span>Attribution</span><br><span>Partnerships</span><br><span>Growth Strategy</span>",
+        values: "<span>Attribution Integrity&nbsp;</span><span>· Executive Partnerships&nbsp;</span><span>· Growth Strategy</span>",
+        valuesMobile: "<span>Attribution Integrity</span><br><span>Executive Partnerships</span><br><span>Growth Strategy</span>",
         title: "Turn <span class=\"bold\">attribution</span><br>into <span class=\"bold\">your growth <br>advantage</span>."
     },
 
@@ -20,7 +20,7 @@ const CONTENT = {
     whySection: {
         pretitle: "Why Are You Here",
         title: "You've built a powerful engine.<br>Now, let's ensure the ecosystem recognizes your full potential.",
-        subtitle: "The difference between technical excellence and market authority is often a matter of strategic access. I help you bridge the gap between your momentum and global recognition, leveraging over a decade of industry-defining experience to elevate your position within the global mobile ecosystem."
+        subtitle: "The difference between technical excellence and market authority is often a matter of strategic access. I help you bridge the gap between your momentum and global recognition, leveraging over a decade of founding-level experience to turn your infrastructure into a powerful vehicle for elite partnerships."
     },
 
     // Section 02: Who Am I
@@ -39,8 +39,8 @@ const CONTENT = {
         services: [
             {
                 title: "Foundation",
-                subtitle: "Architecting Excellence",
-                description: "<i>Foundation</i> is the starting point for companies whose attribution is not yet fully aligned with how the business operates. We begin by understanding your product and existing measurement setup, then architect the right attribution flows and integrations so measurement reflects reality and unlocks missed revenue."
+                subtitle: "Reputation Architecture",
+                description: "<i>Foundation</i> ensures your infrastructure is as ambitious as your vision. We harmonize your attribution flows and data integrity so that your true market impact is undeniable. By verifying your architecture against the industry’s highest standards, we protect your reputation and prepare your platform for the strategic scrutiny of the world’s leading measurement platforms."
             },
             {
                 title: "Acceleration", 
@@ -62,14 +62,14 @@ const CONTENT = {
 
     // Who I Work With
     workWith: {
-        appsAndBrands: {
-            title: "For Apps & Brands",
-            description: "You have the vision and the product. I architect your systems to be \"MMP-Native,\" ensuring you are treated like a Top-100 client from day one. We unlock the premium features and VIP support usually reserved for the industry’s largest spenders, ensuring your growth is boundless."
-        },
         mediaPartners: {
             title: "For Media Partners", 
-            description: "You’ve built a network that delivers results. I help you refine your signal integrity so that every MMP and Advertiser recognizes your value instantly. By harmonizing your infrastructure, we move you from an integrated partner to a <strong>Preferred Strategic Ally</strong> with direct C-suite advocacy."
-        }
+            description: "You’ve built a network that delivers undeniable results. I verify your signal integrity so that the world's leading Advertisers and MMPs recognize your platform as a premier, high-trust asset. We move you from a standard integrated partner to a <strong>Preferred Strategic Ally</strong>, backed by the brand authority and C-suite advocacy required to lead the market."
+        },
+        appsAndBrands: {
+            title: "For Apps & Brands",
+            description: "You have the vision and the product. I architect your systems to be \"MMP-Native\", ensuring the ecosystem recognizes you as a Tier-1 client from day one. By securing your technical foundation, we unlock the premium features and VIP advocacy usually reserved for the industry’s elite, providing the absolute confidence and strategic access needed to scale your spend and keep your brand at the forefront of the industry."
+        }        
     },
 
     // Footer
