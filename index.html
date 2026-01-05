@@ -345,7 +345,7 @@
         // Update content on window resize for responsive values
         window.addEventListener('resize', function() {
             // Only update intro values on resize
-            const isMobile = window.innerWidth <= 825;
+            const isMobile = window.innerWidth <= 1200;
             const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
             updateElement('[data-content="intro.values"]', valuesContent);
         });
@@ -361,7 +361,7 @@
             updateElement('[data-content="intro.subtitle"]', getContent('intro.subtitle'));
             
             // Load mobile or desktop values based on screen size
-            const isMobile = window.innerWidth <= 825;
+            const isMobile = window.innerWidth <= 1200;
             const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
             updateElement('[data-content="intro.values"]', valuesContent);
 

@@ -13,20 +13,20 @@ const CONTENT = {
     intro: {
         values: "Attribution · Partnerships · Growth Strategy",
         valuesMobile: "Attribution<br>Partnerships<br>Growth Strategy",
-        title: "Turn <span class=\"bold\">attribution</span><br>into <span class=\"bold\">your growth advantage</span>."
+        title: "Turn <span class=\"bold\">attribution</span><br>into <span class=\"bold\">your growth <br>advantage</span>."
     },
 
     // Section 01: Why Are You Here
     whySection: {
         pretitle: "Why Are You Here",
-        title: "You've built a powerful engine. Now, let's ensure the ecosystem recognizes your full potential.",
+        title: "You've built a powerful engine.<br>Now, let's ensure the ecosystem recognizes your full potential.",
         subtitle: "The difference between technical excellence and market authority is often a matter of strategic access. I help you bridge the gap between your momentum and global recognition, leveraging over a decade of industry-defining experience to elevate your position within the global mobile ecosystem."
     },
 
     // Section 02: Who Am I
     aboutSection: {
         pretitle: "Who Am I",
-        title: "Hi, I'm Alon Alexander Rapoport, a strategic consultant to brands and executives in the marketing and advertising ecosystem.",
+        title: "Hi, I'm Alon Alexander Rapoport,<br> a strategic consultant to brands and executives in the marketing and advertising ecosystem.",
         description: "I’ve spent the last decade in the rooms where the rules of mobile attribution were written. As one of the core founding team at Singular, I helped build the frameworks that became the industry standard, later building the partnership infrastructure at AppsFlyer that allows the ecosystem to sync and scale today. My background provides my partners with more than just a blueprint - it offers the executive access and strategic positioning needed to turn technical momentum into Tier-1 market authority and long-term ecosystem leadership. I ensure your infrastructure is bulletproof so that your reputation remains an unshakeable asset, clearing the path for us to open doors to high-level strategic collaborations and high-stakes business opportunities with absolute confidence.",
         additionalDescription: "I partner with those I believe make a difference - those driven by a mission and relentlessly building toward an exceptional vision. They dream big, make bold moves, listen carefully, think deeply, and commit fully to their goals. They excel independently, and thrive when collaborating with the right partners."
     },
