@@ -4851,6 +4851,7 @@ img.u-pull-left {
     margin-top       : auto;
     position         : relative;
     color            : var(--color-1);
+    min-height       : 50vh; /* Ensure footer is tall enough for scroll detection */
 }
 
 .s-footer h6 {
