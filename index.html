@@ -97,7 +97,7 @@
                     <div class="column lg-12 s-intro__content-inner">
                         <!-- <div class="s-intro__content-name text-display-1">Alon Alexander Rapoport</div> -->
                         <div class="s-intro__content-value" data-content="intro.values"></div>
-                        <h1 class="s-intro__content-title"data-content="intro.title"></h1>
+                        <h1 class="s-intro__content-title" data-content="intro.title"></h1>
 
                         <div class="s-intro__scroll-arrow">
                             <a href="#why" class="scroll-arrow smoothscroll">
@@ -288,29 +288,6 @@
 
             </section> <!-- end s-value -->
 
-
-            <!-- what I do
-            ----------------------------------------------- -->
-            <!--section id="services" class="s-services target-section">
-
-                <div class="row section-header" data-num="04">
-                    <h3 class="column lg-12 section-header__pretitle text-pretitle">Articles</h3>
-                    <div class="column lg-6 stack-on-1100 section-header__primary">
-                        <h2 class="title text-display-1">
-                            Transforming partnerships into measurable growth outcomes.
-                        </h2>
-                    </div>
-                    <div class="column lg-6 stack-on-1100 section-header__secondary">
-                        <p class="desc">
-                            I help navigate the complex MMP ecosystem, ensuring their technology gets the recognition and integration depth it deserves. From strategic positioning to Tier-1 partnership status.
-                        </p>
-                    </div>
-                </div>
-
-            </section--> 
-
-
-
         <!-- # site-footer
         ================================================== -->
         <footer id="footer" class="s-footer target-section">
@@ -335,7 +312,7 @@
             <div class="row s-footer__bottom">
                 <div class="column lg-12 s-footer__bottom-center">
                     <div class="ss-copyright">
-                        <span data-content="footer.copyright">2025 © Alexander</span>
+                        <span data-content="footer.copyright"></span>
                     </div>
                 </div>
                 </div>
@@ -365,6 +342,14 @@
             loadContent();
         });
 
+        // Update content on window resize for responsive values
+        window.addEventListener('resize', function() {
+            // Only update intro values on resize
+            const isMobile = window.innerWidth <= 825;
+            const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
+            updateElement('[data-content="intro.values"]', valuesContent);
+        });
+
         function loadContent() {
             // Navigation
             updateElement('[data-content="nav.whoAmI"]', getContent('nav.whoAmI'));
@@ -374,7 +359,11 @@
             // Intro Section
             updateElement('[data-content="intro.title"]', getContent('intro.title'));
             updateElement('[data-content="intro.subtitle"]', getContent('intro.subtitle'));
-            updateElement('[data-content="intro.values"]', getContent('intro.values'));
+            
+            // Load mobile or desktop values based on screen size
+            const isMobile = window.innerWidth <= 825;
+            const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
+            updateElement('[data-content="intro.values"]', valuesContent);
 
             // Why Section
             updateElement('[data-content="whySection.pretitle"]', getContent('whySection.pretitle'));

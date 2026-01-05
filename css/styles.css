@@ -2831,6 +2831,11 @@ img.u-pull-left {
     position      : relative;
 }
 
+/* Remove bottom margin from Why section */
+.s-why .section-header {
+    margin-bottom: 0;
+}
+
 .section-header__pretitle,
 .section-header__primary,
 .section-header__secondary {
@@ -2843,8 +2848,8 @@ img.u-pull-left {
 }
 
 .section-header__secondary {
-    padding-right : calc(var(--gutter) * 2);
-    padding-left  : calc(var(--gutter) * 2);
+    /* padding-right : calc(var(--gutter) * 2); */
+    /* padding-left  : calc(var(--gutter) * 2); */
     margin-top    : var(--vspace-0_25);
 }
 
@@ -2880,6 +2885,11 @@ img.u-pull-left {
 .section-header.light-on-dark::before {
     color   : var(--color-gray-18);
     opacity : .75;
+}
+
+/* Make section 03 (What I Do) ::before element color gray-17 */
+.s-value .section-header.light-on-dark::before {
+    color: var(--color-gray-17);
 }
 
 /* ------------------------------------------------------------------- 
@@ -2987,7 +2997,7 @@ img.u-pull-left {
 
     .section-header::before {
         font-size : 6.8em;
-        left : var(--gutter);
+        left : 1.875rem;
     }
 
     .section-header .title {
@@ -3002,9 +3012,9 @@ img.u-pull-left {
         margin-bottom: var(--vspace-0_75);
     }
 
-    .section-header__secondary {
+    /* .section-header__secondary {
         padding: 0;
-    }
+    } */
 
     .list-block__icon {
         height : var(--vspace-1_5);
@@ -3017,11 +3027,11 @@ img.u-pull-left {
     }
 
     .list-block .column:nth-child(2n + 1) {
-        padding-right : 0;
+        padding : var(--gutter);
     }
 
     .list-block .column:nth-child(2n + 2) {
-        padding-left : 0;
+        padding : var(--gutter);
     }
 }
 
@@ -3442,8 +3452,8 @@ img.u-pull-left {
     }
 
     .alon-headshot {
-        max-width: 300px;
-        margin-top: var(--vspace-1);
+        max-width: 350px;
+        margin-top: calc(var(--space) * 0.33);
     }
 
     .about-image {
@@ -3546,8 +3556,8 @@ img.u-pull-left {
     }
 
     .alon-headshot {
-        max-width: 250px;
-        margin-top: var(--vspace-0_75);
+        max-width: 350px;
+        margin-top: calc(var(--space) * 0.83);
     }
 
     .about-image {
@@ -3565,7 +3575,7 @@ img.u-pull-left {
     }
 
     .section-header__primary .desc {
-        margin-bottom: var(--vspace-1_5);
+        margin-bottom: 0;
     }
     
     .section-header__primary .title {
@@ -3884,10 +3894,6 @@ img.u-pull-left {
         --text-multiplier : .5;
     }
 
-    .s-intro__content-title br {
-        display : none;
-    }
-
     .s-intro__content-title::before {
         width : var(--vspace-1_25);
     }
@@ -4005,7 +4011,7 @@ img.u-pull-left {
     }
     
     .section-header__primary .desc {
-        margin-bottom: var(--vspace-1_5);
+        margin-bottom: 0;
     }
 }
 
@@ -4031,7 +4037,7 @@ img.u-pull-left {
 }
 
 .s-value .desc {
-    color: var(--color-gray-11);
+    color: var(--color-gray-13);
 }
 
 .s-value .list-block__item h3 {
@@ -4136,6 +4142,30 @@ img.u-pull-left {
 
 .s-services .list-block__item {
     margin-bottom : 0;
+}
+
+/* Make all service items have identical padding for proper alignment */
+.s-services .list-block .column {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+/* Ensure consistent padding on mobile for services - force override */
+@media screen and (max-width: 825px) {
+    .s-services .list-block .column {
+        padding-left: var(--gutter) !important;
+        padding-right: var(--gutter) !important;
+    }
+    
+    .s-services .list-block .column:nth-child(2n + 1) {
+        padding-left: var(--gutter) !important;
+        padding-right: var(--gutter) !important;
+    }
+
+    .s-services .list-block .column:nth-child(2n + 2) {
+        padding-left: var(--gutter) !important;
+        padding-right: var(--gutter) !important;
+    }
 }
 
 /* service icons individual images */
