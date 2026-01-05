@@ -2912,7 +2912,14 @@ img.u-pull-left {
 }
 
 .list-block__item {
-    margin-bottom : var(--vspace-0_25);
+    margin-bottom : var(--vspace-1_25);
+}
+
+/* Keep smaller margin on mobile */
+@media screen and (max-width: 825px) {
+    .list-block__item {
+        margin-bottom : var(--vspace-0_25);
+    }
 }
 
 .list-block__title {
@@ -3260,7 +3267,7 @@ img.u-pull-left {
     }
     
     .section-header__primary {
-        margin-bottom: var(--vspace-2);
+        margin-bottom: var(--vspace-1);
         position: relative;
         z-index: 2;
     }
