@@ -344,10 +344,10 @@
 
         // Update content on window resize for responsive values
         window.addEventListener('resize', function() {
-            // Only update intro values on resize
+            // Only update intro values on resize with span animation
             const isMobile = window.innerWidth <= 1200;
             const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
-            updateElement('[data-content="intro.values"]', valuesContent);
+            animateIntroSpans(valuesContent);
         });
 
         function loadContent() {
@@ -356,14 +356,14 @@
             updateElement('[data-content="nav.whatIDo"]', getContent('nav.whatIDo'));
             updateElement('[data-content="nav.getInTouch"]', getContent('nav.getInTouch'));
 
-            // Intro Section
+            // Intro Section with span animation
             updateElement('[data-content="intro.title"]', getContent('intro.title'));
             updateElement('[data-content="intro.subtitle"]', getContent('intro.subtitle'));
             
-            // Load mobile or desktop values based on screen size
+            // Load mobile or desktop values based on screen size with span animation
             const isMobile = window.innerWidth <= 1200;
             const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
-            updateElement('[data-content="intro.values"]', valuesContent);
+            animateIntroSpans(valuesContent);
 
             // Why Section
             updateElement('[data-content="whySection.pretitle"]', getContent('whySection.pretitle'));
@@ -415,6 +415,20 @@
             if (element && content) {
                 element.innerHTML = content;
             }
+        }
+
+        function animateIntroSpans(content) {
+            const element = document.querySelector('[data-content="intro.values"]');
+            if (!element || !content) return;
+
+            // Set the content first
+            element.innerHTML = content;
+
+            // Find all spans and apply staggered animation delays
+            const spans = element.querySelectorAll('span');
+            spans.forEach((span, index) => {
+                span.style.animationDelay = `${index * 0.3}s`;
+            });
         }
     </script>
 

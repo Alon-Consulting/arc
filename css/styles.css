@@ -3730,6 +3730,25 @@ img.u-pull-left {
     z-index:        2;
 }
 
+/* Span animation for intro values */
+.s-intro__content-value span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .s-intro__content-title {
     --text-title-size : 8.8rem;
     --text-multiplier : 1;
