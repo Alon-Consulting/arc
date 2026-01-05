@@ -77,7 +77,7 @@ const CONTENT = {
         pretitle: "Get in touch",
         title: "Let's work together and<br>make something great.",
         description: "I work with a limited number of companies at any given time. If you believe there's a strong fit, the best way to reach me is directly, if we already know each other, or through a mutual connection.",
-        linkedinUrl: "https://www.linkedin.com/company/alexanderrapoport",
+        linkedinUrl: "https://www.linkedin.com/company/attribution-works",
         copyright: "2026 © Alexander"
     },
 
