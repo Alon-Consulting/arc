@@ -55,7 +55,7 @@
 
                 <div class="s-header__block">
                     <div class="s-header__logo">
-                        <a class="logo" href="index.html">
+                        <a class="logo" href="/">
                             <img src="images/alexander_logo.png" alt="Alexander" class="alexander-logo">
                         </a>
                     </div>
@@ -67,7 +67,7 @@
     
                     <ul class="s-header__menu-links">
                         <li><a href="#about" class="smoothscroll" data-content="nav.whoAmI"></a></li>
-                        <li><a href="#services" class="smoothscroll" data-content="nav.whatIDo"></a></li>
+                        <li><a href="#value" class="smoothscroll" data-content="nav.whatIDo"></a></li>
                         <li><a href="#footer" class="smoothscroll" data-content="nav.getInTouch"></a></li>
                     </ul> <!-- s-header__menu-links -->
 
@@ -344,10 +344,8 @@
 
         // Update content on window resize for responsive values
         window.addEventListener('resize', function() {
-            // Only update intro values on resize with span animation
-            const isMobile = window.innerWidth <= 1200;
-            const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
-            animateIntroSpans(valuesContent);
+            // Update intro values without animation if already completed
+            updateIntroValues();
         });
 
         function loadContent() {
@@ -419,16 +417,71 @@
 
         function animateIntroSpans(content) {
             const element = document.querySelector('[data-content="intro.values"]');
-            if (!element || !content) return;
+            const titleElement = document.querySelector('.s-intro__content-title');
+            
+            if (!element || !content) {
+                console.log('Element or content not found:', element, content);
+                return;
+            }
 
+            console.log('Starting animation with content:', content);
+            
             // Set the content first
             element.innerHTML = content;
+            
+            // Remove completed class to start fresh animation
+            element.classList.remove('animation-completed');
+            
+            // Hide title initially
+            if (titleElement) {
+                titleElement.classList.remove('show');
+            }
 
-            // Find all spans and apply staggered animation delays
-            const spans = element.querySelectorAll('span');
-            spans.forEach((span, index) => {
-                span.style.animationDelay = `${index * 0.3}s`;
-            });
+            // Use a longer delay to ensure everything is rendered
+            setTimeout(() => {
+                const spans = element.querySelectorAll('span');
+                console.log('Found spans:', spans.length);
+                
+                spans.forEach((span, index) => {
+                    // Remove any existing animate class first
+                    span.classList.remove('animate');
+                    
+                    // Force reflow to ensure class removal is processed
+                    span.offsetHeight;
+                    
+                    // Add animate class with much longer staggered delays
+                    setTimeout(() => {
+                        console.log(`Animating span ${index}:`, span.textContent);
+                        span.classList.add('animate');
+                    }, index * 800); // 800ms delay between each span (much slower)
+                });
+                
+                // Show title and mark animation as completed after all spans finish
+                const totalSpanTime = spans.length * 800 + 1200; // All delays + animation duration
+                setTimeout(() => {
+                    if (titleElement) {
+                        titleElement.classList.add('show');
+                        console.log('Showing title');
+                    }
+                    // Mark animation as completed
+                    element.classList.add('animation-completed');
+                    console.log('Animation completed');
+                }, totalSpanTime);
+                
+            }, 200); // Longer initial delay
+        }
+
+        function updateIntroValues() {
+            const element = document.querySelector('[data-content="intro.values"]');
+            if (!element) return;
+            
+            // Check if animation has already completed
+            if (element.classList.contains('animation-completed')) {
+                // Just update content without animation
+                const isMobile = window.innerWidth <= 1200;
+                const valuesContent = isMobile ? getContent('intro.valuesMobile') : getContent('intro.values');
+                updateElement('[data-content="intro.values"]', valuesContent);
+            }
         }
     </script>
 

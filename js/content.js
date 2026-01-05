@@ -11,7 +11,7 @@ const CONTENT = {
 
     // Hero/Intro Section
     intro: {
-        values: "<span>Attribution</span><span> · Partnerships</span><span> · Growth Strategy</span>",
+        values: "<span>Attribution&nbsp;</span><span>· Partnerships&nbsp;</span><span>· Growth Strategy</span>",
         valuesMobile: "<span>Attribution</span><br><span>Partnerships</span><br><span>Growth Strategy</span>",
         title: "Turn <span class=\"bold\">attribution</span><br>into <span class=\"bold\">your growth <br>advantage</span>."
     },
